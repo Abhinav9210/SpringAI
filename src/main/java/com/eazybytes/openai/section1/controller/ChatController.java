@@ -1,4 +1,4 @@
-package com.eazybytes.openai.controller;
+package com.eazybytes.openai.section1.controller;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/api")
+//@RestController
+//@RequestMapping("/api")
 public class ChatController {
 
     private final ChatClient chatClient;
@@ -16,7 +16,7 @@ public class ChatController {
         this.chatClient = builder.build();
     }
 
-    @GetMapping("/chat")
+//    @GetMapping("/chat")
     public String chat(@RequestParam String message) {
         return "Hello: "+chatClient.prompt(message).call().content();
     }
